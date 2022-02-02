@@ -1,0 +1,47 @@
+{
+  "host": "192.168.29.134",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 500,
+    "max": 500
+  },
+
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "8bzrh4M1AyCii3M7GrwqiVTS99k=",
+    "authStrategies": ["jwt", "local"],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "refresh-token": {
+      "entity": "refreshToken",
+      "service": "refresh-tokens",
+      "secret": "oQQjDiCO/Okmm/AUMN7aqKXod+M=asdfasdfasdf99kdsl)(&&3mc,",
+      "jwtOptions": {
+        "header": {
+          "typ": "refresh"
+        },
+        "audience": "https://yourdomain.com",
+        "issuer": "example",
+        "algorithm": "HS256",
+        "expiresIn": "360d"
+      }
+    },
+
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+
+  "mongodb": "mongodb://127.0.0.1:27017/Users"
+}
